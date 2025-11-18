@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dem3nx0l0gagg"]
+
+[ext_resource type="FontFile" uid="uid://docqoliun85xe" path="res://assets/type_machine/Type Machine.ttf" id="1_1dmxn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjvli"]
+
+[resource]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_yjvli")
+RichTextLabel/font_sizes/normal_font_size = 40
+RichTextLabel/fonts/normal_font = ExtResource("1_1dmxn")

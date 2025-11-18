@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cx5av2u65hmu1"]
+
+[ext_resource type="FontFile" uid="uid://docqoliun85xe" path="res://assets/type_machine/Type Machine.ttf" id="1_amlv4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j2q5q"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0, 0, 0, 0.588235)
+border_width_top = 1
+border_color = Color(0.137255, 0.372549, 0.976471, 1)
+
+[resource]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_j2q5q")
+RichTextLabel/font_sizes/normal_font_size = 40
+RichTextLabel/fonts/normal_font = ExtResource("1_amlv4")

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxg0cy3crr8xn"]
+
+[ext_resource type="Texture2D" uid="uid://bcvo5f6w03by8" path="res://assets/sprites/Sophia_Iddle_01.png" id="1_rkhd4"]
+[ext_resource type="Texture2D" uid="uid://c5v6rnro2svep" path="res://assets/sprites/Sophia_Iddle_02.png" id="2_lrhn5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_my7n2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rkhd4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lrhn5")
+}],
+"loop": true,
+"name": &"iddle",
+"speed": 2.5
+}]
+
+[node name="Character" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_my7n2")
+animation = &"iddle"
+autoplay = "iddle"
+frame_progress = 0.769608

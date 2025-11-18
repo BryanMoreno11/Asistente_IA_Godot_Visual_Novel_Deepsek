@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5ei0v35kg8ut"]
+
+[ext_resource type="Theme" uid="uid://cx5av2u65hmu1" path="res://new_theme.tres" id="1_xh3aw"]
+[ext_resource type="Script" uid="uid://hx41uao30py5" path="res://scripts/dialog_ui.gd" id="2_edwrk"]
+[ext_resource type="FontFile" uid="uid://docqoliun85xe" path="res://assets/type_machine/Type Machine.ttf" id="2_yjvli"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xh3aw"]
+font = ExtResource("2_yjvli")
+font_size = 25
+
+[node name="DialogUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_xh3aw")
+script = ExtResource("2_edwrk")
+
+[node name="DialogBox" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_xh3aw")
+
+[node name="DialogLine" type="RichTextLabel" parent="DialogBox"]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+text = "Hola soy Sophia, seré tu compañera en esta [shake]Feria[/shake]"
+
+[node name="SpeakerBox" type="Control" parent="."]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -250.3
+offset_right = 200.0
+offset_bottom = -200.3
+grow_vertical = 0
+theme = ExtResource("1_xh3aw")
+
+[node name="Polygon2D" type="Polygon2D" parent="SpeakerBox"]
+color = Color(0.137255, 0.372549, 0.976471, 1)
+polygon = PackedVector2Array(0, 0, 180, 0, 200, 50, 0, 50)
+
+[node name="SpeakerName" type="Label" parent="SpeakerBox"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "SophIA"
+label_settings = SubResource("LabelSettings_xh3aw")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -60.0
+offset_right = -17.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Polygon2D" type="Polygon2D" parent="Control"]
+position = Vector2(9, 13)
+polygon = PackedVector2Array(0, 0, 40, 20, 0, 40)
