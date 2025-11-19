@@ -9,7 +9,7 @@ extends Control
 ##Variables
 enum STATE {AI, HUMAN}
 var conversationTurn= STATE.HUMAN
-const  URL_API= "http://localhost:5000/api/chat"
+const  URL_API= "http://127.0.0.1:5000/api/chat"
 const ASSISTANT_NAME= "SophIA"
 var dialog_index:int=0
 var question= ""

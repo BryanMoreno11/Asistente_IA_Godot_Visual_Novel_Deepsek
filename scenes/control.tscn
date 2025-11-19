@@ -67,5 +67,6 @@ scale = Vector2(0.6, 0.6)
 unique_name_in_owner = true
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
+use_threads = true
 
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]
