@@ -8,15 +8,10 @@ extends Control
 
 ##Variables
 const  URL_API= "http://localhost:5000/api/chat"
-const Session_Id= "telegram_6923892313"
 var dialog_index:int=0
-var question= "Como preparo el terreno para el banano"
-const dialog_lines:Array[String]=[
-	"SophIA: Hola soy Sophia, mucho gusto, espero que tu estadía en esta feria sea encatadora",
-	"Tú: Hola, buenos días",
-	"SophIA: Hay algo en lo que pueda ayudarte? Necesitas información sobre la carrera",
-	"Tú: ¿Cuántos semestres tiene la carrera?",
-	"SophIA: Hola, la carrera tiene 8 semestres"
+var question= "¿Quién es el coordinador de la carrera?"
+var dialog_lines:Array[String]=[
+	"SophIA: Hola, bienvenido a la feria","SophIA: Espero que tu estadía aquí sea acogedora"
 ]
 
 
@@ -29,10 +24,11 @@ func parse_line(line:String):
 	}
 
 func process_current_line():
-	var line= dialog_lines[dialog_index]
-	var line_info= parse_line(line)
-	dialog_ui.speaker_name.text=line_info["speaker_name"]
-	dialog_ui.dialog_line.text=line_info["dialog_line"]
+	if(len(dialog_lines)>0):
+		var line= dialog_lines[dialog_index]
+		var line_info= parse_line(line)
+		dialog_ui.speaker_name.text=line_info["speaker_name"]
+		dialog_ui.dialog_line.text=line_info["dialog_line"]
 	 
 
 
@@ -54,7 +50,7 @@ func _input(event):
 func _on_button_pressed() -> void:
 	print("Pregunta enviada")
 	var headers = ["Content-Type: application/json"]
-	var data= {"question":question,"session_id": Session_Id}
+	var data= {"question":question}
 	var api_query= JSON.stringify(data)
 	http_request.request(URL_API, headers, HTTPClient.METHOD_POST, api_query)
 	pass # Replace with function body.

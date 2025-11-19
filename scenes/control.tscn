@@ -16,8 +16,10 @@ script = ExtResource("1_0fbet")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 51.0
+offset_top = 62.0
+offset_right = 137.0
+offset_bottom = 93.0
 text = "Click ME!!!"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="Button"]
@@ -52,6 +54,7 @@ texture = ExtResource("2_r67kn")
 expand_mode = 1
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -1
 
 [node name="Control" type="Control" parent="CanvasLayer2"]
 layout_mode = 3
