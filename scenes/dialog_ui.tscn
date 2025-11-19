@@ -31,9 +31,17 @@ theme = ExtResource("1_xh3aw")
 
 [node name="DialogLine" type="RichTextLabel" parent="DialogBox"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
+theme = ExtResource("1_xh3aw")
 bbcode_enabled = true
 text = "Hola soy Sophia, seré tu compañera en esta [shake]Feria[/shake]"
+
+[node name="TextEdit" type="TextEdit" parent="DialogBox"]
+layout_mode = 2
+theme = ExtResource("1_xh3aw")
+placeholder_text = "Escribe tu Pregunta"
+wrap_mode = 1
 
 [node name="SpeakerBox" type="Control" parent="."]
 custom_minimum_size = Vector2(200, 50)

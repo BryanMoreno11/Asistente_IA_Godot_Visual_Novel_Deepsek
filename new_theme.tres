@@ -13,5 +13,17 @@ border_color = Color(0.137255, 0.372549, 0.976471, 1)
 
 [resource]
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_j2q5q")
+RichTextLabel/font_sizes/bold_font_size = 40
+RichTextLabel/font_sizes/bold_italics_font_size = 40
+RichTextLabel/font_sizes/italics_font_size = 40
+RichTextLabel/font_sizes/mono_font_size = 40
 RichTextLabel/font_sizes/normal_font_size = 40
+RichTextLabel/fonts/bold_font = ExtResource("1_amlv4")
+RichTextLabel/fonts/bold_italics_font = ExtResource("1_amlv4")
+RichTextLabel/fonts/italics_font = ExtResource("1_amlv4")
+RichTextLabel/fonts/mono_font = ExtResource("1_amlv4")
 RichTextLabel/fonts/normal_font = ExtResource("1_amlv4")
+TextEdit/constants/line_spacing = 0
+TextEdit/font_sizes/font_size = 40
+TextEdit/fonts/font = ExtResource("1_amlv4")
+TextEdit/styles/normal = null
