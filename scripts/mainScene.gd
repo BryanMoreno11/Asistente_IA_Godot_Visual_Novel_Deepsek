@@ -16,8 +16,31 @@ var question= ""
 var dialog_lines:Array[String]=[
 	
 ]
-
-
+var regex = RegEx.new()
+var mensajes_espera = [
+"Estoy procesando tu pregunta...",
+"Analizando tu consulta...",
+"Buscando la mejor respuesta...",
+"Pensando en una solución...",
+"Procesando tu solicitud...",
+"Generando una respuesta...",
+"Consultando mis conocimientos...",
+"Elaborando una respuesta...",
+"Trabajando en tu pregunta...",
+"Preparando la información...",
+"Organizando mis ideas...",
+"Desarrollando la respuesta...",
+"Reflexionando sobre tu consulta...",
+"Evaluando las opciones...",
+"Construyendo la respuesta...",
+"Recopilando información...",
+"Formulando mi respuesta...",
+"Considerando tu pregunta...",
+"Preparando mi respuesta...",
+"Trabajando en ello...",
+"Un momento, estoy en ello...",
+"Ya casi tengo la respuesta..."
+]
 
 
 func process_current_line():
@@ -33,19 +56,20 @@ func process_human_dialog():
 	dialog_ui.text_edit.visible=false
 	dialog_ui.dialog_line.visible=true
 	dialog_ui.speaker_name.text="SophIA"
-	dialog_ui.dialog_line.text="Estoy procesando tu pregunta..."
+	dialog_ui.dialog_line.text=mensajes_espera[randi_range(0, len(mensajes_espera)-1)]
 	callApi()
 
 
 
 func _ready() -> void:
+	regex.compile("\\S+")
 	dialog_index=0
 	dialog_ui.speaker_name.text="Tú"
 	process_current_line()
 
 func _input(event):
 	if (event.is_action_pressed("next_line")):
-		if(conversationTurn==STATE.HUMAN):
+		if(conversationTurn==STATE.HUMAN and regex.search_all(dialog_ui.text_edit.text).size()>0):
 			process_human_dialog()
 		if(conversationTurn==STATE.AI):
 			if dialog_index== len (dialog_lines)-1 and len(dialog_lines)>0:
