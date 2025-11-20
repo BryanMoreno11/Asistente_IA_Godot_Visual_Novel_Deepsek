@@ -1,20 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxg0cy3crr8xn"]
+[gd_scene load_steps=7 format=3 uid="uid://cxg0cy3crr8xn"]
 
-[ext_resource type="Texture2D" uid="uid://bcvo5f6w03by8" path="res://assets/sprites/Sophia_Iddle_01.png" id="1_rkhd4"]
-[ext_resource type="Texture2D" uid="uid://c5v6rnro2svep" path="res://assets/sprites/Sophia_Iddle_02.png" id="2_lrhn5"]
+[ext_resource type="Texture2D" uid="uid://dfh6dsfma5wo0" path="res://assets/sprites/iddle/iddle_1.png" id="1_dp8ca"]
+[ext_resource type="Texture2D" uid="uid://b6tshkhg25pnh" path="res://assets/sprites/iddle/iddle_2.png" id="2_0lw5n"]
+[ext_resource type="Texture2D" uid="uid://nogyyc3dbqpv" path="res://assets/sprites/iddle/iddle_3.png" id="3_2cgup"]
+[ext_resource type="Texture2D" uid="uid://pw6ublnxrfqt" path="res://assets/sprites/iddle/iddle_4.png" id="4_a5ia6"]
+[ext_resource type="Texture2D" uid="uid://bwwybfcg43vbn" path="res://assets/sprites/iddle/iddle_5.png" id="5_0dpix"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_my7n2"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_rkhd4")
+"duration": 7.0,
+"texture": ExtResource("1_dp8ca")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_lrhn5")
+"texture": ExtResource("2_0lw5n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2cgup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_a5ia6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0dpix")
 }],
 "loop": true,
 "name": &"iddle",
-"speed": 2.5
+"speed": 10.0
 }]
 
 [node name="Character" type="Node2D"]
@@ -23,4 +35,4 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_my7n2")
 animation = &"iddle"
 autoplay = "iddle"
-frame_progress = 0.769608
+frame_progress = 0.987168
