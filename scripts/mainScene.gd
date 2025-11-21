@@ -71,8 +71,10 @@ func _input(event):
 	if (event.is_action_pressed("next_line")):
 		if(conversationTurn==STATE.HUMAN and regex.search_all(dialog_ui.text_edit.text).size()>0):
 			process_human_dialog()
+			character.play_animation("thinking")
 		if(conversationTurn==STATE.AI):
 			if dialog_index== len (dialog_lines)-1 and len(dialog_lines)>0:
+				character.play_animation("iddle")
 				process_current_line()
 				dialog_index=0
 				dialog_lines=[]
@@ -104,10 +106,20 @@ func callApi()->void:
 	pass # Replace with function body.
 
 
+func clean_spaces(lines:Array[String])->Array[String]:
+	var clean_dialog_lines:Array[String]=[]
+	for line in lines:
+		var clean_line= line.strip_edges(true, true)
+		if(clean_line!=""):
+			clean_dialog_lines.append(clean_line)
+	return clean_dialog_lines
+
 func _on_http_request_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
 	var data= JSON.parse_string(body.get_string_from_utf8())
 	print(data.answer)
 	var answer=	data.answer.split("\n\n")
 	dialog_lines= Array( Array(answer), TYPE_STRING, "", null )
+	dialog_lines= clean_spaces(dialog_lines)
 	process_current_line()
+	character.play_animation("response")
 	pass # Replace with function body.
