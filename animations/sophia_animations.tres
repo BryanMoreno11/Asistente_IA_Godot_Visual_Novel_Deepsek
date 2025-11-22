@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=23 format=3 uid="uid://cxb1176c27lcc"]
+[gd_resource type="SpriteFrames" load_steps=31 format=3 uid="uid://cxb1176c27lcc"]
 
 [ext_resource type="Texture2D" uid="uid://c5prsh6ayxytu" path="res://assets/sprites/iddle/iddle_1.png" id="1_py5ep"]
 [ext_resource type="Texture2D" uid="uid://ct86mf08w6csu" path="res://assets/sprites/iddle/iddle_2.png" id="2_8h55v"]
@@ -23,24 +23,33 @@
 [ext_resource type="Texture2D" uid="uid://codbr0rnxtifq" path="res://assets/sprites/response/response_9.png" id="13_7gqa3"]
 [ext_resource type="Texture2D" uid="uid://ciywndkvrc7xl" path="res://assets/sprites/response/response_10.png" id="14_cogot"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q5v8s"]
+load_path = "res://.godot/imported/response_1.png-d214fe0e33de45518383d1f34a49c75b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6hwbc"]
+load_path = "res://.godot/imported/response_2.png-2f5b7b28625a94f3c92b3c45c381670d.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0q3h4"]
+load_path = "res://.godot/imported/response_3.png-79a498f5291510d71adc3ce792627b2f.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_giy1f"]
+load_path = "res://.godot/imported/response_4.png-35115d77e7a00f568afa4d2203ecdd21.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8e7qs"]
+load_path = "res://.godot/imported/response_5.png-170968ee03930c8629cefd2efebf5215.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v0i8c"]
+load_path = "res://.godot/imported/response_6.png-fc9580b3775e7a33c2197760a43aec6f.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c6y1g"]
+load_path = "res://.godot/imported/response_7.png-55ea4a1c1e39b51969da54a6b27ca554.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gktka"]
+load_path = "res://.godot/imported/response_8.png-7b9ae29f9e0c2c15f21de5edfa1f168e.ctex"
+
 [resource]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_py5ep")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_py5ep")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_py5ep")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_py5ep")
-}, {
-"duration": 1.0,
-"texture": ExtResource("1_py5ep")
-}, {
 "duration": 1.0,
 "texture": ExtResource("1_py5ep")
 }, {
@@ -52,6 +61,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_pgjab")
+}, {
+"duration": 25.0,
+"texture": ExtResource("1_py5ep")
 }],
 "loop": true,
 "name": &"iddle",
@@ -89,8 +101,37 @@ animations = [{
 "texture": ExtResource("14_cogot")
 }],
 "loop": true,
-"name": &"response",
+"name": &"response1",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_q5v8s")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_6hwbc")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_0q3h4")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_giy1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_8e7qs")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_v0i8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_c6y1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_gktka")
+}],
+"loop": true,
+"name": &"response2",
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
