@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxdpnr5x1o6xk"]
+[gd_scene load_steps=6 format=3 uid="uid://bxdpnr5x1o6xk"]
 
 [ext_resource type="Script" uid="uid://chtr57ormkgfh" path="res://scripts/mainScene.gd" id="1_0fbet"]
 [ext_resource type="Texture2D" uid="uid://b7l5xoj3yf6jq" path="res://assets/sprites/background.jpg" id="2_r67kn"]
 [ext_resource type="PackedScene" uid="uid://cxg0cy3crr8xn" path="res://scenes/character.tscn" id="3_brbbq"]
 [ext_resource type="PackedScene" uid="uid://c5ei0v35kg8ut" path="res://scenes/dialog_ui.tscn" id="4_8n18e"]
+[ext_resource type="AudioStream" uid="uid://cdxx66p2lgr5e" path="res://assets/sounds/nextDialog.wav" id="5_tjwpk"]
 
 [node name="mainScene" type="Control"]
 layout_mode = 3
@@ -13,6 +14,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0fbet")
+
+[node name="NextSentenceSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_tjwpk")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 1

@@ -5,6 +5,7 @@ extends Control
 @onready var rich_text_label: RichTextLabel = $RichTextLabel
 @onready var character: Node2D = %Character
 @onready var dialog_ui: Control = %DialogUI
+@onready var next_sentence_sound: AudioStreamPlayer = $NextSentenceSound
 
 ##Variables
 enum STATE {AI, HUMAN}
@@ -47,7 +48,7 @@ func process_current_line():
 	if(len(dialog_lines)>0):
 		var line= dialog_lines[dialog_index]
 		dialog_ui.speaker_name.text=ASSISTANT_NAME
-		dialog_ui.dialog_line.text=line
+		dialog_ui.change_line(line)
 	 
 func process_human_dialog():
 	conversationTurn=STATE.AI
@@ -70,23 +71,31 @@ func _ready() -> void:
 func _input(event):
 	if (event.is_action_pressed("next_line")):
 		if(conversationTurn==STATE.HUMAN and regex.search_all(dialog_ui.text_edit.text).size()>0):
+			next_sentence_sound.play()
 			process_human_dialog()
 			character.play_animation("thinking")
 		if(conversationTurn==STATE.AI):
 			if dialog_index== len (dialog_lines)-1 and len(dialog_lines)>0:
-				character.play_animation("iddle")
-				process_current_line()
-				dialog_index=0
-				dialog_lines=[]
-				dialog_ui.speaker_name.text="Tú"
-				dialog_ui.text_edit.visible=true
-				dialog_ui.dialog_line.visible=false
-				conversationTurn=STATE.HUMAN
-				await get_tree().create_timer(0.25).timeout
-				dialog_ui.text_edit.grab_focus()
+				if dialog_ui.animate_text:
+					dialog_ui.skip_text_animation()
+				else:
+					next_sentence_sound.play()
+					character.play_animation("iddle")
+					dialog_index=0
+					dialog_lines=[]
+					dialog_ui.speaker_name.text="Tú"
+					dialog_ui.text_edit.visible=true
+					dialog_ui.dialog_line.visible=false
+					conversationTurn=STATE.HUMAN
+					await get_tree().create_timer(0.25).timeout
+					dialog_ui.text_edit.grab_focus()
 				
+			elif dialog_ui.animate_text:
+				dialog_ui.skip_text_animation()
 			elif dialog_index< len(dialog_lines)-1:
 				dialog_index+=1
+				next_sentence_sound.play()
+				await get_tree().create_timer(0.09).timeout
 				process_current_line()
 			
 

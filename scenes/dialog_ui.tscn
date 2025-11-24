@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5ei0v35kg8ut"]
+[gd_scene load_steps=6 format=3 uid="uid://c5ei0v35kg8ut"]
 
 [ext_resource type="Theme" uid="uid://cx5av2u65hmu1" path="res://new_theme.tres" id="1_xh3aw"]
 [ext_resource type="Script" uid="uid://hx41uao30py5" path="res://scripts/dialog_ui.gd" id="2_edwrk"]
 [ext_resource type="FontFile" uid="uid://docqoliun85xe" path="res://assets/type_machine/Type Machine.ttf" id="2_yjvli"]
+[ext_resource type="AudioStream" uid="uid://ds1cfk3a4hw1k" path="res://assets/sounds/sfx-blipfemale.wav" id="3_avaca"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xh3aw"]
 font = ExtResource("2_yjvli")
@@ -17,6 +18,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_xh3aw")
 script = ExtResource("2_edwrk")
+
+[node name="textBlipTimer" type="Timer" parent="."]
+wait_time = 0.09
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_avaca")
 
 [node name="DialogBox" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(0, 200)
@@ -77,6 +84,7 @@ text = "SophIA"
 label_settings = SubResource("LabelSettings_xh3aw")
 
 [node name="Control" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0

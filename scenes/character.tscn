@@ -10,4 +10,4 @@ script = ExtResource("1_rkhd4")
 sprite_frames = ExtResource("1_agfs1")
 animation = &"iddle"
 autoplay = "iddle"
-frame_progress = 0.150249
+frame_progress = 0.347289
